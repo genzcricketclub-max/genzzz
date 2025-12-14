@@ -1,0 +1,106 @@
+:root {
+  --primary: #ff9800;
+  --dark: #111;
+  --light: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: #333;
+}
+
+header {
+  background: var(--dark);
+  color: white;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 60px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  background: white;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 45px;
+}
+
+.hero span {
+  color: var(--primary);
+}
+
+.section {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.join {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.join button {
+  background: var(--primary);
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+footer {
+  background: black;
+  color: #aaa;
+  text-align: center;
+  padding: 15px;
+}
