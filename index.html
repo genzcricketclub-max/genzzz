@@ -11,7 +11,7 @@
 <body>
 
   <header>
-    <img src="img.jpeg">
+    <img src="img.png">
     <nav>
       <a href="#about">About</a>
       <a href="#players">Players</a>
@@ -33,32 +33,106 @@
   </section>
 
   <section id="players" class="section">
-    <h2>Our Players</h2>
+  <h2>Our Players</h2>
 
-    <div class="players">
-      <div class="card">
-        <img src="player.jpeg"Player Photo">
-        <h3>Zeenith VR</h3>                      
-        <p>Runs: 122</p>
-        <p>Wickets:5</p>
-        <p>Highest Score: 56</p>
-      </div>
-      <div class="card">
-  <img src="player2.jpg" alt="Player Photo">
-  <h3>Rehash VR</h3>
-  <p>Runs: 30</p>
-  <p>Wickets: 1</p>
-  <p>Highest Score: 24</p>
-</div>
+  <!-- SEARCH BOX -->
+  <input
+    type="text"
+    id="playerSearch"
+    placeholder="Search player name..."
+    class="search-box"
+  >
 
+  <div class="players" id="playersList">
+
+    <div class="card">
+      <img src="player.jpeg" alt="Player Photo">
+      <h3>Zeenith VR</h3>
+      <p>Runs: 122</p>
+      <p>Wickets: 5</p>
+      <p>Highest Score: 56</p>
     </div>
-  </section>
 
-  <section id="join" class="join">
-    <h2>Want to Join GEN Z?</h2>
-    <p>Contact us and become part of our cricket family.</p>
-    <button>Join Team</button>
-  </section>
+    <div class="card">
+      <img src="img2.jpeg" alt="Player Photo">
+      <h3>Rehash VR</h3>
+      <p>Runs: 30</p>
+      <p>Wickets: 1</p>
+      <p>Highest Score: 24</p>
+    </div>
+
+    <div class="card">
+      <img src="barani.jpeg" alt="Player Photo">
+      <h3>Barani</h3>
+      <p>Runs: 154</p>
+      <p>Wickets: 0</p>
+      <p>Highest Score: 51</p>
+    </div>
+
+    <div class="card">
+      <img src="coach.JPG" alt="Coach Photo">
+      <h3>Balaji</h3>
+      <p>Runs: --</p>
+      <p>Wickets: --</p>
+      <p>Highest Score: --</p>
+    </div>
+
+  </div>
+</section>
+<script>
+  const searchInput = document.getElementById("playerSearch");
+  const cards = document.querySelectorAll(".players .card");
+
+  searchInput.addEventListener("keyup", function () {
+    const value = this.value.toLowerCase();
+
+    cards.forEach(card => {
+      const name = card.querySelector("h3").innerText.toLowerCase();
+      card.style.display = name.includes(value) ? "block" : "none";
+    });
+  });
+</script>
+<section id="join" class="join">
+<form class="register-form"
+      action="https://api.web3forms.com/submit"
+      method="POST">
+
+  <input type="hidden" name="access_key"
+         value="34f547e4-10b2-424f-af8e-a973cfb56d4d">
+
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+
+  <select name="role" required>
+    <option value="">Select Role</option>
+    <option>Batsman</option>
+    <option>Bowler</option>
+    <option>All-Rounder</option>
+    <option>Wicket Keeper</option>
+  </select>
+
+  <select name="batting_style">
+    <option>Right Hand Batsman</option>
+    <option>Left Hand Batsman</option>
+  </select>
+
+  <input type="text" name="bowling_style" placeholder="Bowling Style">
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+
+  <button type="submit">Register Now</button>
+</form>
+
+</section>
+
+
+
+<!-- JAVASCRIPT -->
+<script>
+  document.getElementById("joinBtn").addEventListener("click", function () {
+    document.getElementById("registerForm").style.display = "flex";
+    this.style.display = "none"; // hide join button
+  });
+</script>
 
   <footer>
     © 2025 GEN Z Cricket Club
@@ -66,8 +140,4 @@
 
 </body>
 </html>
-
-
-
-
 
